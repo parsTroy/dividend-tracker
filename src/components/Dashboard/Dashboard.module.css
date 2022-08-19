@@ -1,0 +1,67 @@
+.container {
+    position: fixed;
+    width: 1670px;
+    height: 650px;
+    background-color: var(--tertiary-color);
+    border-radius: 24px;
+    margin: 20px;
+    top: 145px;
+    color: var(--primary-text-color);
+    text-align: center;
+    padding: 20px;
+}
+
+.headingContainer {
+    display: flex;
+    columns: 4;
+    justify-content: space-around;
+    margin-top: 10px;
+}
+
+.portfolioValue {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: var(--portfolio-font-size);
+    font-weight: var(--font-size-bold);
+    background-color: var(--quaternary-color);
+    width: 200px;
+    height: 55px;
+    border-radius: 5px;
+}
+.yield,
+.yieldOnCost,
+.annualIncome,
+.beta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 50px;
+    border: 1px solid white;
+    font-size: var(--primary-font-size);
+    font-weight: var(--font-size-bold);
+}
+
+.portfolio {
+    display: flex;
+    columns: 10;
+    justify-content: space-around;
+    margin-top: 50px;
+    background-color: var(--secondary-color);
+    margin: 50px 50px;
+    height: 75%;
+}
+
+.ticker,
+.shares,
+.price,
+.change,
+.averageCost,
+.profitLoss,
+.dividendYied,
+.yOC,
+.aI,
+.dividendSafey {
+    margin-top: 15px;
+}
