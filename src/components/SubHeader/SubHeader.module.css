@@ -20,10 +20,25 @@
 .dashboard,
 .futureValue,
 .upcomingDividends {
-    padding-top: 10px;
+    border: none;
     text-align: center;
+    align-items: center;
+    align-content: center;
     width: 200px;
-    height: 30px;
+    height: 45px;
     border-radius: 10px;
+    color: var(--primary-text-color);
     background-color: var(--tertiary-color);
+    cursor: pointer;
+}
+.dashboard:hover,
+.futureValue:hover,
+.upcomingDividends:hover {
+    background-color: rgba(12, 0, 50, .80);
+    box-shadow: 1px 2px black;
+}
+.dashboard:active,
+.futureValue:active,
+.upcomingDividends:active {
+    background-color: rgba(12, 0, 50, .50);
 }

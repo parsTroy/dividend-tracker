@@ -25,7 +25,7 @@ const StockDividend = () => {
   return (
     <div className={style.container}>
       {/* {'OR DIVIDEND' || <div key={dividend.historical}>{dividend.historical}</div>} // REAL URL */}
-      {'BROKE' || <button key={dividend[0].dividend}>{dividend[0].dividend}</button>}
+      {dividend[0] && <div key={dividend[0].dividend}>{dividend[0].dividend}</div>}
     </div>
   )
 }

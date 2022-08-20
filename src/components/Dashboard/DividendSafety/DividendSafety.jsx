@@ -25,7 +25,7 @@ const DividendSafety = () => {
     return (
       <div className={style.container}>
           {/* {'OR SYMBOL' || <div key={ticker.symbol}>{ticker.symbol}</div>} REAL API NEED TO FIX SEARCH AND FIND API */}
-          {'✔ or x' || <div key={safety[0].safety}>{safety[0].safety}</div>}
+          {safety[0] && <div key={safety[0].safety}>{safety[0].safety}</div>}
       </div>
     )
   }
