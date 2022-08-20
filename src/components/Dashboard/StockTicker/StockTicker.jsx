@@ -5,17 +5,19 @@ import Axios from 'axios';
 
 const StockTicker = () => {
 
+    const url = 'https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/AAPL?apikey=0b92bda5d2f297a72d359be292be3991'
+
     const [ticker, setTicker] = useState('')
 
     const getTicker = () => {
-        Axios.get("https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/AAPL?apikey=0b92bda5d2f297a72d359be292be3991").then(
+        Axios.get(url).then(
             (response) => {
                 console.log(response.data.symbol) // Ticker
                 setTicker(response.data.symbol) // Setting the Ticker
             }
             ).catch(err => {
-                console.log("Request Error")
-            }
+                console.log("Request Error") // Error Response
+            }, [url]
         );
     };
 

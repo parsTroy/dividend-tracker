@@ -5,18 +5,20 @@ import Axios from 'axios';
 
 const StockPrice = () => {
 
+    const url = 'https://financialmodelingprep.com/api/v3/quote-short/AAPL?apikey=0b92bda5d2f297a72d359be292be3991'
+
     const [price, setPrice] = useState('')
 
     const getPrice = () => {
-        Axios.get("https://financialmodelingprep.com/api/v3/quote-short/AAPL?apikey=0b92bda5d2f297a72d359be292be3991")
+        Axios.get(url)
             .then(
                 (response) => {
                     console.log(response.data[0].price) // Price
                     setPrice(response.data[0].price) // Setting the Price
                 }
             ).catch(err => {
-                console.log("Request Error")
-            });
+                console.log("Request Error") // Error Response
+            }, [url]);
     };
 
     return (

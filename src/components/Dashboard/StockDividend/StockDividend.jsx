@@ -5,17 +5,19 @@ import Axios from 'axios';
 
 const StockDividend = () => {
 
+  const url = 'https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/AAPL?apikey=0b92bda5d2f297a72d359be292be3991'
+
   const [dividend, setDividend] = useState('')
 
   const dividendAmount = () => {
-    Axios.get("https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/AAPL?apikey=0b92bda5d2f297a72d359be292be3991").then(
+    Axios.get(url).then(
         (response) => {
             console.log(response.data.historical[0].dividend) // Dividend Float
             setDividend(response.data.historical[0].dividend) // Setting Dividend 
         }
         ).catch(err => {
           console.log("Request Error")
-      }
+      }, [url]
     );
   };
 
@@ -25,6 +27,7 @@ const StockDividend = () => {
         {dividend && <p>{dividend}</p>}
     </div>
   );
+
 };
 
 export default StockDividend;
