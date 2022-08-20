@@ -1,5 +1,8 @@
 import React from "react";
 import style from './Dashboard.module.css';
+import StockDividend from "./StockDividend/StockDividend";
+import StockPrice from "./StockPrice/StockPrice";
+import StockTicker from "./StockTicker/StockTicker";
 
 const Dashboard = () => {
   return (
@@ -12,34 +15,37 @@ const Dashboard = () => {
         <div className={style.beta}>Portfolio Beta: {`0.72`}</div>
       </div>
       <div className={style.portfolio}>
-        <div class={style.ticker}>
+        <div className={style.ticker}>
           TICKER
+          <StockTicker />
         </div>
-        <div class={style.shares}>
+        <div className={style.shares}>
           SHARES
         </div>
-        <div class={style.price}>
+        <div className={style.price}>
           PRICE
+          <StockPrice />
         </div>
-        <div class={style.change}>
+        <div className={style.change}>
           CHANGE
         </div>
-        <div class={style.averageCost}>
+        <div className={style.averageCost}>
           AVERAGE COST
         </div>
-        <div class={style.profitLoss}>
+        <div className={style.profitLoss}>
           PROFIT/LOSS
         </div>
-        <div class={style.dividendYied}>
+        <div className={style.dividendYied}>
           DIVIDEND YIELD
+          <StockDividend />
         </div>
-        <div class={style.yOC}>
+        <div className={style.yOC}>
           YIELD ON COST
         </div>
-        <div class={style.aI}>
+        <div className={style.aI}>
           ANNUAL INCOME
         </div>
-        <div class={style.dividendSafey}>
+        <div className={style.dividendSafey}>
           DIVIDEND SAFETY
         </div>
       </div>
