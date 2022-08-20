@@ -4,7 +4,7 @@ import style from './Shares.module.css';
 const Shares = () => {
     return (
         <div className={style.container}>
-            36
+            {Number(35)}
         </div>
     );
 };
