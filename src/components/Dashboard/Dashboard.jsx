@@ -10,14 +10,13 @@ import StockDividend from "./StockDividend/StockDividend";
 import StockPrice from "./StockPrice/StockPrice";
 import StockTicker from "./StockTicker/StockTicker";
 import YieldOnCost from "./YieldOnCost/YieldOnCost";
-import { portfolioValue } from './Calculations/Calculation.jsx';
 
 const Dashboard = () => {
 
   return (
     <div className={style.container}>
       <div className={style.headingContainer}>
-        <div className={style.portfolioValue}>{`${portfolioValue}`}</div>
+        <div className={style.portfolioValue}>{'$162,522.62'}</div>
         <div className={style.yield}>Portfolio Yield: {`9.87%`}</div>
         <div className={style.yieldOnCost}>Yield on Cost: {`11.98%`}</div>
         <div className={style.annualIncome}>Annual Income: {`$2,400.12`}</div>
