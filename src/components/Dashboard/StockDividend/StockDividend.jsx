@@ -1,33 +1,32 @@
-import React from "react";
-import { useState } from 'react';
+import React, { useEffect, useState } from "react"
 import style from './StockDividend.module.css';
-import Axios from 'axios';
 
 const StockDividend = () => {
+  
+  const url = 'https://financialmodelingprep.com/api/v3/quote-short/AAPL?apikey=0b92bda5d2f297a72d359be292be3991';
 
-  const url = 'https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/AAPL?apikey=0b92bda5d2f297a72d359be292be3991'
+  const [dividend, setdividend] = useState([])
 
-  const [dividend, setDividend] = useState('')
+  const fetchData = () => {
+    fetch(url)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setdividend(data)
+      })
+  }
 
-  const dividendAmount = () => {
-    Axios.get(url).then(
-        (response) => {
-            console.log(response.data.historical[0].dividend) // Dividend Float
-            setDividend(response.data.historical[0].dividend) // Setting Dividend 
-        }
-        ).catch(err => {
-          console.log("Request Error")
-      }, [url]
-    );
-  };
+  useEffect(() => {
+    fetchData()
+  }, [])
 
   return (
-    <div className={style.container}>
-        <button onClick={dividendAmount}>Click Me</button>
-        {dividend && <p>{dividend}</p>}
-    </div>
-  );
-
-};
+    <div>FIX THIS</div>
+    // <div className={style.container}>
+    //     <div key={dividend.historical}>{dividend.historical}</div>
+    // </div>
+  )
+}
 
 export default StockDividend;

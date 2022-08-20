@@ -1,32 +1,32 @@
-import React from "react";
-import { useState } from 'react';
+import React, { useEffect, useState } from "react"
 import style from './StockPrice.module.css';
-import Axios from 'axios';
 
 const StockPrice = () => {
+  
+  const url = 'https://financialmodelingprep.com/api/v3/quote-short/AAPL?apikey=0b92bda5d2f297a72d359be292be3991';
 
-    const url = 'https://financialmodelingprep.com/api/v3/quote-short/AAPL?apikey=0b92bda5d2f297a72d359be292be3991'
+  const [price, setPrice] = useState([])
 
-    const [price, setPrice] = useState('')
+  const fetchData = () => {
+    fetch(url)
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setPrice(data)
+      })
+  }
 
-    const getPrice = () => {
-        Axios.get(url)
-            .then(
-                (response) => {
-                    console.log(response.data[0].price) // Price
-                    setPrice(response.data[0].price) // Setting the Price
-                }
-            ).catch(err => {
-                console.log("Request Error") // Error Response
-            }, [url]);
-    };
+  useEffect(() => {
+    fetchData()
+  }, [])
 
-    return (
-        <div className={style.container}>
-            <button onClick={getPrice}>Press Me!</button>
-            {price && <p>{price}</p>}
-        </div>
-    );
-};
+  return (
+    // <div>Hello</div>
+    <div className={style.container}>
+      <div key={price[0].price}>{price[0].price}</div>
+    </div>
+  )
+}
 
-export default StockPrice;
+export default StockPrice
