@@ -22,7 +22,7 @@ const DividendSafety = () => {
       fetchData()
     }, [])
 
-    console.log(safety[0] && safety[0].safety);
+    // console.log(safety[0] && safety[0].safety);
   
     return (
       <div className={style.container}>

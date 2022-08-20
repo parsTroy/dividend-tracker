@@ -22,7 +22,7 @@ const StockDividend = () => {
     fetchData()
   }, [])
 
-  console.log(dividend[0] && dividend[0].dividend);
+  // console.log(dividend[0] && dividend[0].dividend);
 
   return (
     <div className={style.container}>

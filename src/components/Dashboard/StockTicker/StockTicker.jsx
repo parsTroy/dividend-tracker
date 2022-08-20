@@ -22,7 +22,7 @@ const StockTicker = () => {
     fetchData()
   }, [])
 
-  console.log(ticker[0] && ticker[0].ticker);
+  // console.log(ticker[0] && ticker[0].ticker);
 
   return (
     <div className={style.container}>
