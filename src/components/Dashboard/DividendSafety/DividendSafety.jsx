@@ -21,6 +21,8 @@ const DividendSafety = () => {
     useEffect(() => {
       fetchData()
     }, [])
+
+    console.log(safety[0] && safety[0].safety);
   
     return (
       <div className={style.container}>

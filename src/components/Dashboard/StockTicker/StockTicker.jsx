@@ -22,10 +22,12 @@ const StockTicker = () => {
     fetchData()
   }, [])
 
+  console.log(ticker[0] && ticker[0].ticker);
+
   return (
     <div className={style.container}>
         {/* {'OR SYMBOL' || <div key={ticker.symbol}>{ticker.symbol}</div>} REAL API */}
-        {'TROY' || <div key={ticker[0].ticker}>{ticker[0].ticker}</div>}
+        {ticker[0] && <div key={ticker[0].ticker}>{ticker[0].ticker}</div>}
     </div>
   )
 }

@@ -22,6 +22,8 @@ const StockDividend = () => {
     fetchData()
   }, [])
 
+  console.log(dividend[0] && dividend[0].dividend);
+
   return (
     <div className={style.container}>
       {/* {'OR DIVIDEND' || <div key={dividend.historical}>{dividend.historical}</div>} // REAL URL */}

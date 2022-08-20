@@ -22,6 +22,8 @@ const StockPrice = () => {
     fetchData()
   }, [])
 
+  console.log(price[0] && price[0].price);
+
   return (
     <div className={style.container}>
       {/* {'OR PRICE' || <div key={price[0].price}>{price[0].price}</div>} // REAL API */}
