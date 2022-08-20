@@ -7,7 +7,7 @@ const StockTicker = () => {
 
     const url = 'https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/AAPL?apikey=0b92bda5d2f297a72d359be292be3991'
 
-    const [ticker, setTicker] = useState('')
+    const [ticker, setTicker] = useState('');
 
     const getTicker = () => {
         Axios.get(url).then(
@@ -20,7 +20,6 @@ const StockTicker = () => {
             }, [url]
         );
     };
-
 
     return (
         <div className={style.container}>
