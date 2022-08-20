@@ -22,7 +22,6 @@ const StockTicker = () => {
   }, [], 5000)
 
   return (
-    // <div>Hello</div>
     <div className={style.container}>
         {'OR SYMBOL' || <div key={ticker.symbol}>{ticker.symbol}</div>}
     </div>

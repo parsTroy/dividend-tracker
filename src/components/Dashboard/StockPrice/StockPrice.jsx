@@ -22,7 +22,6 @@ const StockPrice = () => {
   }, [], 10000)
 
   return (
-    // <div>KILLS THE PROGRAM</div>
     <div className={style.container}>
       {'OR PRICE' || <div key={price[0].price}>{price[0].price}</div>}
     </div>
