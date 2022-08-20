@@ -19,12 +19,12 @@ const StockPrice = () => {
 
   useEffect(() => {
     fetchData()
-  }, [])
+  }, [], 10000)
 
   return (
-    // <div>Hello</div>
+    // <div>KILLS THE PROGRAM</div>
     <div className={style.container}>
-      <div key={price[0].price}>{price[0].price}</div>
+      {'OR PRICE' || <div key={price[0].price}>{price[0].price}</div>}
     </div>
   )
 }

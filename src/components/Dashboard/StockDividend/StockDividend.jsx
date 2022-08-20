@@ -22,10 +22,9 @@ const StockDividend = () => {
   }, [])
 
   return (
-    <div>FIX THIS</div>
-    // <div className={style.container}>
-    //     <div key={dividend.historical}>{dividend.historical}</div>
-    // </div>
+    <div className={style.container}>
+        {'OR DIVIDEND' || <div key={dividend.historical}>{dividend.historical}</div>}
+    </div>
   )
 }
 

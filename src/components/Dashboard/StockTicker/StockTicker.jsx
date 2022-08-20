@@ -19,12 +19,12 @@ const StockTicker = () => {
 
   useEffect(() => {
     fetchData()
-  }, [])
+  }, [], 5000)
 
   return (
     // <div>Hello</div>
     <div className={style.container}>
-        <div key={ticker.symbol}>{ticker.symbol}</div>
+        {'OR SYMBOL' || <div key={ticker.symbol}>{ticker.symbol}</div>}
     </div>
   )
 }
