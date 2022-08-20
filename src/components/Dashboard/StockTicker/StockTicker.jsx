@@ -25,7 +25,7 @@ const StockTicker = () => {
   return (
     <div className={style.container}>
         {/* {'OR SYMBOL' || <div key={ticker.symbol}>{ticker.symbol}</div>} REAL API */}
-        {'NO' || <div key={ticker[0].ticker}>{ticker[0].ticker}</div>}
+        {'TROY' || <div key={ticker[0].ticker}>{ticker[0].ticker}</div>}
     </div>
   )
 }

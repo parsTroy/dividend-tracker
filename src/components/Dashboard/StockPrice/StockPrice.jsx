@@ -25,7 +25,7 @@ const StockPrice = () => {
   return (
     <div className={style.container}>
       {/* {'OR PRICE' || <div key={price[0].price}>{price[0].price}</div>} // REAL API */}
-      {'NO' || <div key={price[0].price}>{price[0].price}</div>}
+      {'85.50' || <div key={price[0].price}>{price[0].price}</div>}
     </div>
   )
 }

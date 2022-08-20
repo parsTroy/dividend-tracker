@@ -13,6 +13,7 @@ import YieldOnCost from "./YieldOnCost/YieldOnCost";
 import { portfolioValue } from './Calculations/Calculation.jsx';
 
 const Dashboard = () => {
+
   return (
     <div className={style.container}>
       <div className={style.headingContainer}>
