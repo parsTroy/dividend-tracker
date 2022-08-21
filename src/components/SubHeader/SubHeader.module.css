@@ -19,7 +19,8 @@
 
 .dashboard,
 .futureValue,
-.upcomingDividends {
+.upcomingDividends,
+a {
     border: none;
     text-align: center;
     align-items: center;
@@ -30,6 +31,8 @@
     color: var(--primary-text-color);
     background-color: var(--tertiary-color);
     cursor: pointer;
+    text-decoration: none;
+    
 }
 .dashboard:hover,
 .futureValue:hover,

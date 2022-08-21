@@ -4,6 +4,11 @@ import Header from './components/Header/Header';
 import SubHeader from './components/SubHeader/SubHeader';
 import Footer from './components/Footer/Footer';
 import Dashboard from './components/Dashboard/Dashboard';
+import FutureValue from './components/FutureValue/FutureValue';
+import UpComingDividends from './components/UpComingDividends/UpComingDividends';
+import { Route, Routes } from 'react-router-dom';
+
+
 
 function App() {
   return (
@@ -12,7 +17,15 @@ function App() {
         <Header className='header' />
         <SubHeader className='subHeader' />
 
-        <Dashboard className='dashboard' />
+        <Routes>
+
+        <Route path="/" element={<Dashboard />}/>
+
+        <Route path="/futurevalue" element={<FutureValue />}/>
+
+        <Route path="/upcomingdividends" element={<UpComingDividends />}/>
+
+        </Routes>
         
         <Footer className='footer' />
       </div>

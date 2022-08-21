@@ -10,16 +10,6 @@ const SubHeader = () => {
     <div className={style.header}>
       <div className={style.container}>
 
-        <Routes>
-
-          <Route path="/" element={<Dashboard/>}/>
-        
-          <Route path="/futurevalue" element={<FutureValue />}/>
-
-          <Route path="/upcomingdividends" element={<UpComingDividends />}/>
-
-        </Routes>
-
         <button className={style.dashboard}>
           <a href="/">Dashboard</a>
         </button>
