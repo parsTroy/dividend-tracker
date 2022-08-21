@@ -1,8 +1,4 @@
 import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import Dashboard from '../Dashboard/Dashboard';
-import FutureValue from '../FutureValue/FutureValue';
-import UpComingDividends from '../UpComingDividends/UpComingDividends';
 import style from "./SubHeader.module.css";
 
 const SubHeader = () => {
