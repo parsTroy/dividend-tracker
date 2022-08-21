@@ -1,5 +1,6 @@
 import React from 'react';
-import DashboardButton from '../DashboardButton/DashboardButton';
+import { Route, Routes } from 'react-router-dom';
+import Dashboard from '../Dashboard/Dashboard';
 import FutureValue from '../FutureValue/FutureValue';
 import UpComingDividends from '../UpComingDividends/UpComingDividends';
 import style from "./SubHeader.module.css";
@@ -9,13 +10,17 @@ const SubHeader = () => {
     <div className={style.header}>
       <div className={style.container}>
 
-        <DashboardButton />
+        <Routes>
+
+          <Route path="/" element={<Dashboard/>}/>
         
-        <FutureValue />
+          <Route path="/futurevalue" element={<FutureValue />}/>
 
-        <UpComingDividends />
+          <Route path="/upcomingdividends" element={<UpComingDividends />}/>
 
-        {/* <button className={style.dashboard}>
+        </Routes>
+
+        <button className={style.dashboard}>
           <a href="/">Dashboard</a>
         </button>
 
@@ -25,7 +30,7 @@ const SubHeader = () => {
 
         <button className={style.upcomingDividends}>
           <a href="/upcomingdividends">Upcoming Dividends</a>
-        </button> */}
+        </button>
 
       </div>
     </div>
