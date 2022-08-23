@@ -58,3 +58,7 @@
     height: 20px;
     margin: 2.5px;
 }
+
+.chartContainer {
+    width: 600px;
+}

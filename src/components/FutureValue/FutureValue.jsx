@@ -8,6 +8,7 @@ const FutureValue = () => {
     const [currentValue, setCurrentValue] = useState(0)
     const [returnValue, setReturnValue] = useState(0)
     const [fvYears, setFvYears] = useState(0)
+    const [fvDca, setFvDca] = useState(0)
     const [futureValue, setFutureValue] = useState(0)
     const [message, setMessage] = useState('')
     const realReturn = (returnValue / 100);
@@ -16,10 +17,11 @@ const FutureValue = () => {
       //prevent submitting
       event.preventDefault()
 
-      if (currentValue === 0 || returnValue === 0 || fvYears === 0) {
+      if (currentValue === 0 || returnValue === 0 || fvYears === 0 || fvDca === 0) {
         alert('Please enter valid data...')
       } else {
-        let futureValue = (currentValue * realReturn)*fvYears
+        let dca = ((fvDca*12) + currentValue)
+        let futureValue = (dca * realReturn)*fvYears
         setFutureValue(futureValue.toFixed(2))
       }
     }
@@ -56,6 +58,11 @@ const FutureValue = () => {
               <div className={style.inputContainer}>
                 <label for='fvYears'>Years Invested</label>
                 <input type="number" name="fvYears" value={fvYears} onChange={(event) => setFvYears(event.target.value)} />
+              </div>
+
+              <div className={style.inputContainer}>
+                <label for='fvDca'>Monthly Recurring Investment</label>
+                <input type="number" name="fvDca" value={fvDca} onChange={(event) => setFvDca(event.target.value)} />
               </div>
 
               <div>

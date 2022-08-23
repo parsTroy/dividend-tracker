@@ -15,7 +15,7 @@ const SubHeader = () => {
         </button>
 
         <button className={style.upcomingDividends}>
-          <a href="/upcomingdividends">Upcoming Dividends</a>
+          <a href="/upcomingdividends">Scheduled Dividends</a>
         </button>
 
       </div>

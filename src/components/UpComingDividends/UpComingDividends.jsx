@@ -1,7 +1,10 @@
 import React from "react";
+import Chart from "./Chart/Chart";
 import style from './UpComingDividends.module.css';
 
 const UpComingDividends = () => {
+
+
     return (
         <div className={style.container}>
         <div className={style.headingContainer}>
@@ -12,6 +15,8 @@ const UpComingDividends = () => {
           <div className={style.beta}>Portfolio Beta: {`0.72`}</div>
         </div>
         <div className={style.portfolio}>
+
+          <Chart />
 
         </div>
       </div>
