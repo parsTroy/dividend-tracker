@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import style from './Chart.module.css';
 
 import {
@@ -23,7 +23,7 @@ import {
     Legend
   );
 
-  const labels = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+  const labels = ["Aug", "Sep", "Oct"];
 
 const options = {
   plugins: {
@@ -37,8 +37,8 @@ export const data = {
   labels,
   datasets: [
     {
-      label: "Scheduled Dividends",
-      data: [32, 42, 51, 60, 51, 95, 52, 52, 62, 10, 39, 10],
+      label: "Scheduled Dividends (Three Months)",
+      data: [32, 42, 51],
       backgroundColor: "#3500D3",
       borderColor: "#3500D3",
     },
@@ -48,6 +48,25 @@ export const data = {
 
 
 const Chart = () => {
+
+  const url = 'https://financialmodelingprep.com/api/v3/stock_dividend_calendar?from=2020-06-01&to=2020-09-10&apikey=0b92bda5d2f297a72d359be292be3991';
+
+  const [dividendData, setDividendData] = useState([])
+
+  const fetchData = () => {
+    fetch(url) // URL TO USE
+      .then(response => {
+        return response.json();
+      })
+      .then(data => {
+        setDividendData(data)
+      })
+  }
+
+  useEffect (() => {
+    fetchData()
+  }, [])
+
   return (
         <div style={{ marginTop: 20, width: 930, height: 450, backgroundColor: "var(--tertiary-color)" }}>
             <Bar options={options} data={data} />

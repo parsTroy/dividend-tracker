@@ -1,11 +1,12 @@
 import React from "react";
+import { fetchData } from "../../data";
 import AnnualIncome from "./AnnualIncome/AnnualIncome";
 import AverageCost from "./AverageCost/AverageCost";
 import Change from "./Change/Change";
 import style from './Dashboard.module.css';
 import DividendSafety from "./DividendSafety/DividendSafety";
 import ProfitLoss from "./ProfitLoss/ProfitLoss";
-import Shares, { ShareValue } from "./Shares/Shares";
+import Shares from "./Shares/Shares";
 import StockDividend from "./StockDividend/StockDividend";
 import StockPrice from "./StockPrice/StockPrice";
 import StockTicker from "./StockTicker/StockTicker";
@@ -17,7 +18,7 @@ const Dashboard = () => {
   return (
     <div className={style.container}>
       <div className={style.headingContainer}>
-        <div className={style.portfolioValue}>{StockPrice * ShareValue}</div>
+        <div className={style.portfolioValue}>{fetchData}</div>
         <div className={style.yield}>Portfolio Yield: {`9.87%`}</div>
         <div className={style.yieldOnCost}>Yield on Cost: {`11.98%`}</div>
         <div className={style.annualIncome}>Annual Income: {`$2,400.12`}</div>

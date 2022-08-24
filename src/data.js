@@ -1,5 +1,3 @@
-// import Axios from "axios";
-
 // // const apiKey = "0b92bda5d2f297a72d359be292be3991";
 
 // export const dividendAmount = () => {
@@ -11,3 +9,19 @@
 //         }
 //     );
 // };
+
+// const url = 'https://financialmodelingprep.com/api/v3/quote-short/QYLD?apikey=0b92bda5d2f297a72d359be292be3991';
+
+// let setPrice = [];
+// let price = [];
+// let priceValueReal;
+
+// export const fetchData = () => {
+//     fetch(url) // URL TO USE
+//       .then(response => {
+//         return response.json();
+//       })
+//       .then(data => {
+//         setPrice(data)
+//       })
+//   }
