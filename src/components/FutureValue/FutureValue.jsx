@@ -10,7 +10,6 @@ const FutureValue = () => {
     const [fvYears, setFvYears] = useState(0)
     const [fvDca, setFvDca] = useState(0)
     const [futureValue, setFutureValue] = useState(0)
-    const [message, setMessage] = useState('')
     const realReturn = (returnValue / 100);
 
     let calcFutureValue = (event) => {
@@ -72,8 +71,6 @@ const FutureValue = () => {
               <div>
 
                 <h1 className={style.fvAmount}>Future Value: {futureValue}</h1>
-
-                <p>{message}</p>
 
               </div>
 
