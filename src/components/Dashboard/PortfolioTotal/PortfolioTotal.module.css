@@ -1,0 +1,8 @@
+.total {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    width: 200px;
+    height: 55px;
+}

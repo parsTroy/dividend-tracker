@@ -32,7 +32,6 @@ a {
     background-color: var(--tertiary-color);
     cursor: pointer;
     text-decoration: none;
-    
 }
 .dashboard:hover,
 .futureValue:hover,

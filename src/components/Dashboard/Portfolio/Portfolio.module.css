@@ -1,0 +1,79 @@
+.portfolio {
+    margin: auto;
+    padding: 15px;
+    width: 1450px;
+}
+ 
+.portfoliomainrowwrapper,
+.portfoliorowwrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+ 
+.portfoliomainrow {
+    width: 140px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.portfoliorow {
+    width: 140px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+ 
+.removestockbutton {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    margin: 0px 0px 0px 5px;
+}
+ 
+.addmorebutton {
+    margin-top: 15px;
+    margin-bottom: -15px;
+    border: none;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    width: 200px;
+    height: 45px;
+    border-radius: 10px;
+    color: var(--primary-text-color);
+    background-color: var(--tertiary-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+.removestockbutton{
+    margin-top: 2px;
+    margin-left: -45px;
+    border: none;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    color: var(--primary-text-color);
+    background-color: var(--tertiary-color);
+    cursor: pointer;
+    text-decoration: none;
+}
+.removestockbutton:hover,
+.addmorebutton:hover {
+    background-color: rgba(12, 0, 50, .80);
+    box-shadow: 1px 2px black;
+}
+.removestockbutton:active,
+.addmorebutton:active {
+    background-color: rgba(12, 0, 50, .50);
+}
