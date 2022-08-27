@@ -8,7 +8,7 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
 
     useEffect(() => {
         //Fetches prices and updates the state with current prices and profit or loss for the position
-        stockFetcher(stocks, setStocks, profitLossCalculator);
+        stockFetcher(stocks, setStocks, profitLossCalculator, yieldTotalCalculator);
     }, []);
 
     //Calculates the profit or loss for a single position
@@ -39,6 +39,19 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
         return profitLossTotal.toFixed(2);
     };
 
+    //Calculates the profit or loss for the whole portfolio
+    const yieldTotalCalculator = (stocks) => {
+        let yieldTotal = 0;
+
+        stocks.forEach((s) => {
+            if (!isNaN(Number(s.yield))) {
+                yieldTotal += Number(s.lastDiv[0]);
+            }
+        });
+
+        return yieldTotal.toFixed(2);
+    };
+
     const fetchPrices = () => {
         //Fetches prices and updates the state with current prices and profit or loss for the position
         stockFetcher(stocks, setStocks, profitLossCalculator);
@@ -52,6 +65,7 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
                 <div className="monitormainrow">Quantity</div>
                 <div className="monitormainrow">Price</div>
                 <div className="monitormainrow">Current Price</div>
+                <div className="monitormainrow">Dividend</div>
                 <div className="monitormainrow">Profit/Loss</div>
             </div>
             {/* For each stock in a portfolio prints a row with info */}
@@ -66,6 +80,7 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
                             <div className="monitorrow">
                                 {s.currentPrice ? s.currentPrice : null}
                             </div>
+                            <div className="monitorrow">{s.lastDiv}</div>
                             <div
                                 className={`${
                                     s.profitLoss > 0 ? 'profitrow' : 'lossrow'
@@ -81,6 +96,19 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
             })}
             <div className="monitorsummaryrowwrapper">
                 <div className="monitorsummaryrow">Total:</div>
+                <div className="monitorrow"></div>
+                <div className="monitorrow"></div>
+                <div className="monitorrow"></div>
+                <div className="monitorrow"></div>
+                <div
+                    className={`${
+                        yieldTotalCalculator(stocks)
+                            ? 'profitrow'
+                            : 'lossrow'
+                    } monitorsummaryrow`}
+                >
+                    {yieldTotalCalculator(stocks)}
+                </div>
                 <div
                     className={`${
                         profitLossTotalCalculator(stocks)

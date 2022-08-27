@@ -15,8 +15,7 @@
 .monitorsummaryrowwrapper {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    width: 840px;
+    width: 100%;
 }
 
 .monitormainrow,
@@ -36,7 +35,6 @@
     align-items: center;
     justify-content: center;
     font-weight: bold;
-    margin-right: -60px;
 }
 
 .profitrow {
