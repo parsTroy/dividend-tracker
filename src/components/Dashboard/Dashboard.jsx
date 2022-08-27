@@ -10,15 +10,19 @@ import StockDividend from "./StockDividend/StockDividend";
 import StockPrice from "./StockPrice/StockPrice";
 import StockTicker from "./StockTicker/StockTicker";
 import YieldOnCost from "./YieldOnCost/YieldOnCost";
+import { data } from '../../data';
 
 
-const Dashboard = () => {
+const Dashboard = (tickerArr) => {
 
-  const url = 'https://financialmodelingprep.com/api/v3/quote-short/QYLD?apikey=0b92bda5d2f297a72d359be292be3991';
+  console.log("Dashboard "+data);
+
+  const url = `https://financialmodelingprep.com/api/v3/quote-short/${tickerArr}?apikey=0b92bda5d2f297a72d359be292be3991`;
   // const url2 = 'https://financialmodelingprep.com/api/v3/historical-price-full/stock_dividend/QYLD?apikey=0b92bda5d2f297a72d359be292be3991';
   // const url2 = 'https://6300f6439a1035c7f8fb8068.mockapi.io/api/div/stock-data';
 
-  const [price, setPrice] = useState([])
+  const [price, setPrice] = useState([]);
+  const [q, setq] = useState([]);
 
   const fetchData = () => {
     fetch(url) // URL TO USE
@@ -54,7 +58,9 @@ const Dashboard = () => {
       <div className={style.portfolio}>
         <div className={style.ticker}>
           TICKER
-          <StockTicker />
+          {data.map((tickers) => {
+            return <li className={style.listItem}>{tickers.ticker}</li>
+          })}
         </div>
         <div className={style.shares}>
           SHARES
@@ -62,11 +68,15 @@ const Dashboard = () => {
         </div>
         <div className={style.price}>
           PRICE
-          <StockPrice />
+          {data.map((prices) => {
+            return <li className={style.listItem}>{prices.price}</li>
+          })}
         </div>
         <div className={style.change}>
           CHANGE
-          <Change />
+          {data.map((changes) => {
+            return <li className={style.listItem}>{changes.change}</li>
+          })}
         </div>
         <div className={style.averageCost}>
           AVERAGE COST
@@ -78,7 +88,9 @@ const Dashboard = () => {
         </div>
         <div className={style.dividendYied}>
           DIVIDEND YIELD
-          <StockDividend />
+          {data.map((dividends) => {
+            return <li className={style.listItem}>{dividends.yield}</li>
+          })}
         </div>
         <div className={style.yOC}>
           YIELD ON COST
@@ -90,7 +102,9 @@ const Dashboard = () => {
         </div>
         <div className={style.dividendSafey}>
           DIVIDEND SAFETY
-          <DividendSafety />
+          {data.map((safetys) => {
+            return <li className={style.listItem}>{safetys.safety}</li>
+          })}
         </div>
       </div>
     </div>
