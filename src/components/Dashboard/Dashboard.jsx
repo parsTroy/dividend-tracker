@@ -1,8 +1,8 @@
 import React, { useState } from "react";
+import PortfolioStats from "../PortfolioStats/PortfolioStats";
 import style from './Dashboard.module.css';
 import Portfolio from "./Portfolio/Portfolio";
 import PortfolioMonitor from "./PortfolioMonitor/PortfolioMonitor";
-import PortfolioTotal from "./PortfolioTotal/PortfolioTotal";
 
 const Dashboard = () => {
 
@@ -18,11 +18,7 @@ const Dashboard = () => {
   return (
     <div className={style.container}>
       <div className={style.headingContainer}>
-        <div className={style.portfolioValue}>{<PortfolioTotal />}</div>
-        <div className={style.yield}>Portfolio Yield: {`10.87%`}</div>
-        <div className={style.yieldOnCost}>Yield on Cost: {`11.98%`}</div>
-        <div className={style.annualIncome}>Annual Income: {`$2,400.12`}</div>
-        <div className={style.beta}>Portfolio Beta: {`0.72`}</div>
+        <PortfolioStats />
       </div>
       <div className={style.portfolio}>
             <div className={style.ticker}>
