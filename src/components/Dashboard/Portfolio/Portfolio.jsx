@@ -63,8 +63,6 @@ export default function Portfolio({ stocks, setStocks }) {
                 <div className={style.portfoliomainrow}>Position</div>
                 <div className={style.portfoliomainrow}>Quantity</div>
                 <div className={style.portfoliomainrow}>Price</div>
-                <div className={style.portfoliomainrow}>Dividend</div>
-                <div className={style.portfoliomainrow}>Yield</div>
             </div>
             {/* For each stock in database renders a row with info */}
             {stocks.map((s) => {
@@ -74,8 +72,6 @@ export default function Portfolio({ stocks, setStocks }) {
                         <div className={style.portfoliorow}>{s.position}</div>
                         <div className={style.portfoliorow}>{s.quantity}</div>
                         <div className={style.portfoliorow}>{s.price}</div>
-                        <div className={style.portfoliorow}>{s.dividend}</div>
-                        <div className={style.portfoliorow}>{s.yield}</div>
                         <button
                             className={style.removestockbutton}
                             onClick={() => handleRemoveStock(s.id)}
