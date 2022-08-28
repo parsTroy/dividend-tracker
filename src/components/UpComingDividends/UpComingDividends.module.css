@@ -8,14 +8,14 @@
     top: 145px;
     color: var(--primary-text-color);
     text-align: center;
-    padding: 20px;
+    padding: 15px;
 }
 
 .headingContainer {
     display: flex;
     columns: 4;
     justify-content: space-around;
-    margin-top: 25px;
+    margin-top: 15px;
 }
 
 .portfolioValue {
