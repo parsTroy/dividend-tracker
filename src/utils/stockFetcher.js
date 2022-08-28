@@ -1,5 +1,8 @@
+// eslint-disable-next-line
 import { STOCK_API, STOCK_API_DIVIDEND } from './stockAPI';
+// eslint-disable-next-line
 import { TOKEN, DIVIDEND_TOKEN } from './stockAPI';
+
 
 //Function which fetches the current prices and updates our state with current prices and profit/loss
 const stockFetcher = (stocks, setStocks, profitLossCalculator, yieldCalculator) => {
@@ -43,7 +46,6 @@ const stockFetcher = (stocks, setStocks, profitLossCalculator, yieldCalculator) 
                 ...stocks.slice(indexOfStock + 1),
             ]);
         } catch (error) {
-            error = alert("Could not connect to API...")
             console.log(error);
         }
     });
