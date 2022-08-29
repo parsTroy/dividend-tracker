@@ -58,72 +58,72 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
     };
 
     return (
-        <div className="monitorpage">
-            <div className="monitormainrowwrapper">
-                <div className="monitormainrow">Ticker</div>
-                <div className="monitormainrow">Position</div>
-                <div className="monitormainrow">Quantity</div>
-                <div className="monitormainrow">Price</div>
-                <div className="monitormainrow">Current Price</div>
-                <div className="monitormainrow">Dividend</div>
-                <div className="monitormainrow">Profit/Loss</div>
-            </div>
-            {/* For each stock in a portfolio prints a row with info */}
-            {stocks.map((s) => {
-                return (
-                    <div key={s.id}>
-                        <div className="monitorrowwrapper">
-                            <div className="monitorrow">{s.ticker}</div>
-                            <div className="monitorrow">{s.position}</div>
-                            <div className="monitorrow">{s.quantity}</div>
-                            <div className="monitorrow">{s.price}</div>
-                            <div className="monitorrow">
-                                {s.currentPrice ? s.currentPrice : null}
-                            </div>
-                            <div className="monitorrow">{s.lastDiv}</div>
-                            <div
-                                className={`${
-                                    s.profitLoss > 0 ? 'profitrow' : 'lossrow'
-                                } monitorrow`}
-                            >
-                                {s.profitLoss ? s.profitLoss : null}
-                            </div>
-                            <div className="monitorrow">
+            <div className="monitorpage">
+                <div className="monitormainrowwrapper">
+                    <div className="monitormainrow">Ticker</div>
+                    <div className="monitormainrow">Position</div>
+                    <div className="monitormainrow">Quantity</div>
+                    <div className="monitormainrow">Price</div>
+                    <div className="monitormainrow">Current Price</div>
+                    <div className="monitormainrow">Dividend</div>
+                    <div className="monitormainrow">Profit/Loss</div>
+                </div>
+                {/* For each stock in a portfolio prints a row with info */}
+                {stocks.map((s) => {
+                    return (
+                        <div key={s.id}>
+                            <div className="monitorrowwrapper">
+                                <div className="monitorrow">{s.ticker}</div>
+                                <div className="monitorrow">{s.position}</div>
+                                <div className="monitorrow">{s.quantity}</div>
+                                <div className="monitorrow">{s.price}</div>
+                                <div className="monitorrow">
+                                    {s.currentPrice ? s.currentPrice : null}
+                                </div>
+                                <div className="monitorrow">{s.lastDiv}</div>
+                                <div
+                                    className={`${
+                                        s.profitLoss > 0 ? 'profitrow' : 'lossrow'
+                                    } monitorrow`}
+                                >
+                                    {s.profitLoss ? s.profitLoss : null}
+                                </div>
+                                <div className="monitorrow">
+                                </div>
                             </div>
                         </div>
+                    );
+                })}
+                <div className="monitorsummaryrowwrapper">
+                    <div className="monitorsummaryrow">Total:</div>
+                    <div className="monitorrow"></div>
+                    <div className="monitorrow"></div>
+                    <div className="monitorrow"></div>
+                    <div className="monitorrow"></div>
+                    <div
+                        className={`${
+                            yieldTotalCalculator(stocks)
+                                ? 'profitrow'
+                                : 'lossrow'
+                        } monitorsummaryrow`}
+                    >
+                        {yieldTotalCalculator(stocks)}
                     </div>
-                );
-            })}
-            <div className="monitorsummaryrowwrapper">
-                <div className="monitorsummaryrow">Total:</div>
-                <div className="monitorrow"></div>
-                <div className="monitorrow"></div>
-                <div className="monitorrow"></div>
-                <div className="monitorrow"></div>
-                <div
-                    className={`${
-                        yieldTotalCalculator(stocks)
-                            ? 'profitrow'
-                            : 'lossrow'
-                    } monitorsummaryrow`}
-                >
-                    {yieldTotalCalculator(stocks)}
+                    <div
+                        className={`${
+                            profitLossTotalCalculator(stocks)
+                                ? 'profitrow'
+                                : 'lossrow'
+                        } monitorsummaryrow`}
+                    >
+                        {profitLossTotalCalculator(stocks)}
+                    </div>
                 </div>
-                <div
-                    className={`${
-                        profitLossTotalCalculator(stocks)
-                            ? 'profitrow'
-                            : 'lossrow'
-                    } monitorsummaryrow`}
-                >
-                    {profitLossTotalCalculator(stocks)}
+                <div className="rightshift">
+                <button className="monitorfetchprices" onClick={fetchPrices}>
+                    <span>Update prices</span>
+                </button>
                 </div>
             </div>
-            <div className="rightshift">
-            <button className="monitorfetchprices" onClick={fetchPrices}>
-                <span>Update prices</span>
-            </button>
-            </div>
-        </div>
-    );
+        )
 }
