@@ -47,7 +47,6 @@
     display: flex;
     columns: 10;
     justify-content: space-around;
-    margin-bottom: 50px;
     background-color: var(--secondary-color);
     margin: 50px 50px;
     height: 460px;
@@ -64,7 +63,7 @@
 .yOC,
 .aI,
 .dividendSafey {
-    margin-top: 15px;
+    margin-top: 30px;
 }
 
 .button {
