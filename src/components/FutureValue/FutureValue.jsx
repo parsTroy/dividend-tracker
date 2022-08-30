@@ -1,8 +1,27 @@
 import React, { useState } from "react";
 import style from './FutureValue.module.css';
-import PortfolioStats from '../PortfolioStats/PortfolioStats';
+// import PortfolioStats from '../PortfolioStats/PortfolioStats';
 
 const FutureValue = () => {
+
+
+  // FORMULA
+/*
+
+A = (PMT [((1+r)**n-1)/r])(1+r)
+
+
+currentValue    P = The principal investment (the initial deposit or amount), as a dollar value
+fvDca           PMT = The monthly repayment
+futureValue     A = The future value of the investment/loan, including interest, as a dollar value
+realReturn      r = the annual interest rate, as a percent
+1               n = the number of times that interest is compounded per year, e.g. 12 times per year is equivalent to compounded monthly
+fvYears         t = the number of years the money is invested or borrowed for, in years
+
+let futureValue = (fvDCA*(((1+returnValue)**12(-1)/12))*(1+returnValue);
+
+
+*/ 
 
     // State
 
@@ -11,7 +30,8 @@ const FutureValue = () => {
     const [fvYears, setFvYears] = useState(0)
     const [fvDca, setFvDca] = useState(0)
     const [futureValue, setFutureValue] = useState(0)
-    const realReturn = (returnValue / 100);
+
+    const realReturn = (returnValue / 100); // Return rate in %
 
     let calcFutureValue = (event) => {
       //prevent submitting
@@ -20,8 +40,11 @@ const FutureValue = () => {
       if (currentValue === 0 || returnValue === 0 || fvYears === 0 || fvDca === 0) {
         alert('Please enter valid data...')
       } else {
-        let dca = ((fvDca*12) + currentValue)
-        let futureValue = (dca * realReturn)*fvYears
+
+        let futureValue = 
+
+        // let dca = ((fvDca*12) + currentValue)
+        // let futureValue = (dca * realReturn)*fvYears
         setFutureValue(futureValue.toFixed(2))
       }
     }
@@ -29,9 +52,9 @@ const FutureValue = () => {
 
     return (
         <div className={style.container}>
-          <div className={style.headingContainer}>
+          {/* <div className={style.headingContainer}>
             <PortfolioStats />
-          </div>
+          </div> */}
 
 
         <div className={style.portfolio}>
@@ -41,22 +64,22 @@ const FutureValue = () => {
 
             <form onSubmit={calcFutureValue}>
 
-              <div className={style.inputContainer}>
+              <div className={style.inputContainer}> {/* Current Value */}
                 <label for='fvValue'>Current Investment</label>
                 <input id="CIV" type="number" name="fvValue" value={currentValue} onChange={(event) => setCurrentValue(event.target.value)} />
               </div>
 
-              <div className={style.inputContainer}>
+              <div className={style.inputContainer}> {/* Return % Expected */}
                 <label for='fvReturn'>Expected Return %</label>
                 <input type="number" name="fvReturn" step="0.1" value={returnValue} onChange={(event) => setReturnValue(event.target.value)} />
               </div>
 
-              <div className={style.inputContainer}>
+              <div className={style.inputContainer}> {/* Time Invested (In Years) */}
                 <label for='fvYears'>Years Invested</label>
                 <input type="number" name="fvYears" value={fvYears} onChange={(event) => setFvYears(event.target.value)} />
               </div>
 
-              <div className={style.inputContainer}>
+              <div className={style.inputContainer}> {/* Recurring Investment (Monthly) */}
                 <label for='fvDca'>Monthly Recurring Investment</label>
                 <input type="number" name="fvDca" value={fvDca} onChange={(event) => setFvDca(event.target.value)} />
               </div>

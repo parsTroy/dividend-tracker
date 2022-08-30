@@ -1,4 +1,4 @@
-.containerHeader {
+/* .containerHeader {
     display: flex;
     columns: 4;
     column-gap: 50px;
@@ -29,4 +29,4 @@
     border: 1px solid white;
     font-size: var(--primary-font-size);
     font-weight: var(--font-size-bold);
-}
+} */

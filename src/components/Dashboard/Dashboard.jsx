@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import PortfolioStats from "../PortfolioStats/PortfolioStats";
+// import PortfolioStats from "../PortfolioStats/PortfolioStats";
 import style from './Dashboard.module.css';
 import Portfolio from "./Portfolio/Portfolio";
 import PortfolioMonitor from "./PortfolioMonitor/PortfolioMonitor";
@@ -17,9 +17,9 @@ const Dashboard = () => {
 
   return (
     <div className={style.container}>
-      <div className={style.headingContainer}>
+      {/* <div className={style.headingContainer}>
         <PortfolioStats />
-      </div>
+      </div> */}
       <div className={style.portfolio}>
             <div className={style.ticker}>
                  {/* If user is ready with portfolio shows PortfolioMonitor */}
@@ -42,7 +42,7 @@ const Dashboard = () => {
                                 className={style.portfoliobuttonback}
                                 onClick={() => setIsPortfolioReady(false)}
                             >
-                                <span>Go back to Portfolio</span>
+                                <span>Go back to Portfolio Actions</span>
                             </button>
                         </div>
                         <PortfolioMonitor

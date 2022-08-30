@@ -49,7 +49,8 @@
     align-items: center;
     background-color: var(--secondary-color);
     margin: 50px 50px;
-    padding-top: 5px;
+    height: 520px;
+    padding-top: 20px;
     padding-bottom: 5px;
 }
 
