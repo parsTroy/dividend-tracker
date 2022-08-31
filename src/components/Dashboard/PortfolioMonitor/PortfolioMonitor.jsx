@@ -8,7 +8,7 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
 
     useEffect(() => {
         //Fetches prices and updates the state with current prices and profit or loss for the position
-        stockFetcher(stocks, setStocks, profitLossCalculator, yieldTotalCalculator);
+        stockFetcher(stocks, setStocks, profitLossCalculator);
     }, []);
 
     //Calculates the profit or loss for a single position
@@ -22,7 +22,6 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
                 profitLoss = (price - currentPrice) * quantity;
             }
         }
-
         return profitLoss.toFixed(2);
     };
 
@@ -35,22 +34,21 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
                 profitLossTotal += Number(s.profitLoss);
             }
         });
-
         return profitLossTotal.toFixed(2);
     };
 
-    //Calculates the profit or loss for the whole portfolio
-    const yieldTotalCalculator = (stocks) => {
-        let yieldTotal = 0;
+    // Calculates the yield or loss for the whole portfolio
+    // const yieldTotalCalculator = (stocks) => {
+    //     let yieldTotal = 0;
 
-        stocks.forEach((s) => {
-            if (!isNaN(Number(s.yield))) {
-                yieldTotal += Number(s.lastDiv[0]);
-            }
-        });
+    //     stocks.forEach((s) => {
+    //         if (!isNaN(Number(s.yield))) {
+    //             yieldTotal += Number(s.lastDiv[0]);
+    //         }
+    //     });
 
-        return yieldTotal.toFixed(2);
-    };
+    //     return yieldTotal.toFixed(2);
+    // };
 
     const fetchPrices = () => {
         //Fetches prices and updates the state with current prices and profit or loss for the position
@@ -100,7 +98,8 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
                     <div className="monitorrow"></div>
                     <div className="monitorrow"></div>
                     <div className="monitorrow"></div>
-                    <div
+                    <div className="monitorrow"></div>
+                    {/* <div
                         className={`${
                             yieldTotalCalculator(stocks)
                                 ? 'profitrow'
@@ -108,7 +107,7 @@ export default function PortfolioMonitor({ stocks, setStocks }) {
                         } monitorsummaryrow`}
                     >
                         {yieldTotalCalculator(stocks)}
-                    </div>
+                    </div> */}
                     <div
                         className={`${
                             profitLossTotalCalculator(stocks)

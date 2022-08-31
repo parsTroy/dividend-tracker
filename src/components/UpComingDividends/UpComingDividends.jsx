@@ -1,23 +1,23 @@
-import React from "react";
-import Chart from "./Chart/Chart";
-import style from './UpComingDividends.module.css';
-// import PortfolioStats from '../PortfolioStats/PortfolioStats';
+// import React from "react";
+// import Chart from "./Chart/Chart";
+// import style from './UpComingDividends.module.css';
+// // import PortfolioStats from '../PortfolioStats/PortfolioStats';
 
-const UpComingDividends = () => {
+// const UpComingDividends = () => {
 
 
-    return (
-        <div className={style.container}>
-          {/* <div className={style.headingContainer}>
-            <PortfolioStats />
-          </div> */}
-        <div className={style.portfolio}>
+//     return (
+//         <div className={style.container}>
+//           {/* <div className={style.headingContainer}>
+//             <PortfolioStats />
+//           </div> */}
+//         <div className={style.portfolio}>
 
-          <Chart />
+//           <Chart />
 
-        </div>
-      </div>
-    );
-};
+//         </div>
+//       </div>
+//     );
+// };
 
-export default UpComingDividends;
+// export default UpComingDividends;

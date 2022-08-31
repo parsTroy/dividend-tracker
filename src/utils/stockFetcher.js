@@ -10,33 +10,33 @@ const stockFetcher = (stocks, setStocks, profitLossCalculator, yieldCalculator) 
         try {
             const stockName = s.ticker.replace('', '');
             const response = await fetch(
-                `${STOCK_API}/quote?symbol=${stockName}&token=${TOKEN}`
-                // `${STOCK_API_DIVIDEND}${stockName}${DIVIDEND_TOKEN}`
+                // `${STOCK_API}/quote?symbol=${stockName}&token=${TOKEN}`
+                `${STOCK_API_DIVIDEND}${stockName}${DIVIDEND_TOKEN}`
             );
 
-            console.log(response)
+            // console.log(response)
 
             const data = await response.json();
 
             const profitLoss = profitLossCalculator(
                 s.price,
-                data.c,
-                // data[0].price,
+                // data.c,
+                data[0].price,
                 s.position,
                 s.quantity,
             );
 
             // const yields = yieldCalculator(
-            //     data.lastDiv,
+            //     data[0].lastDiv,
             //     s.quantity,
             // );
 
             const stockWithPrice = {
                 ...s,
-                currentPrice: data.c.toFixed(2),
-                // currentPrice: data[0].price.toFixed(2),
+                // currentPrice: data.c.toFixed(2),
+                currentPrice: data[0].price.toFixed(2),
                 profitLoss,
-                // lastDiv: data[0].lastDiv.toFixed(3),
+                lastDiv: data[0].lastDiv.toFixed(3),
             };
 
             const indexOfStock = stocks.indexOf(s);

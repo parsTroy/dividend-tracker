@@ -10,13 +10,13 @@ const SubHeader = () => {
           <a href="/">Dashboard</a>
         </button>
 
-        <button className={style.futureValue}>
+        {/* <button className={style.futureValue}>
           <a href="/futurevalue">Future Value</a>
-        </button>
+        </button> */}
 
-        <button className={style.upcomingDividends}>
+        {/* <button className={style.upcomingDividends}>
           <a href="/upcomingdividends">Scheduled Dividends</a>
-        </button>
+        </button> */}
 
       </div>
     </div>

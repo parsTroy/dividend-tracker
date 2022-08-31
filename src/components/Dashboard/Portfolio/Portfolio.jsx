@@ -31,7 +31,7 @@ export default function Portfolio({ stocks, setStocks }) {
             } catch (error) {
                 /*The option how to handle the error is totally up to you. 
                 Ideally, you can send notification to the user */
-                console.log(error);
+                // console.log(error);
             }
         };
 
@@ -52,7 +52,7 @@ export default function Portfolio({ stocks, setStocks }) {
         } catch (error) {
             /*The option how to handle the error is totally up to you. 
             Ideally, you can send notification to the user */
-            console.log(error);
+            // console.log(error);
         }
     };
 
