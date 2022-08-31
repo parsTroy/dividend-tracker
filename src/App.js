@@ -16,15 +16,17 @@ function App() {
         <Header className='header' />
         <SubHeader className='subHeader' />
 
-        <Routes>
+        <Dashboard />
 
-        <Route path="/" element={<Dashboard />}/>
+        {/* <Routes> */}
 
-        <Route path="/futurevalue" element={<FutureValue />}/>
+        {/* <Route path="/" element={<Dashboard />}/> */}
 
-        <Route path="/upcomingdividends" element={<UpComingDividends />}/>
+        {/* <Route path="/futurevalue" element={<FutureValue />}/>
 
-        </Routes>
+        <Route path="/upcomingdividends" element={<UpComingDividends />}/> */}
+
+        {/* </Routes> */}
         
         <Footer className='footer' />
       </div>
