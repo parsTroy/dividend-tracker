@@ -6,6 +6,10 @@ const SubHeader = () => {
     <div className={style.header}>
       <div className={style.container}>
 
+        <button className={style.dashboard}>
+          <a href="https://troyparsons.ca/">Troy Parsons Portfolio</a>
+        </button>
+
         {/* <button className={style.dashboard}>
           <a href="/">Dashboard</a>
         </button> */}
